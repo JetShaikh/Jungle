@@ -1,0 +1,340 @@
+clc
+disp ( 'Live the Horror'); 
+disp ( 'Death the Dream');
+disp ( ' ');
+
+disp ( 'Hey congrats, you have been nominated to fight for behalf of the earth. No, you don''''t get to give that responability to someone else.');
+disp ( 'You have to be the one. Now...');
+disp ( ' ');
+
+place = input("Go ahead and choose a destination for your journey: Europe, Americas, Austrila, or Asia: ", 's');
+friend = input ("Who would you like to take journey with?: ", "s");
+
+if (place == "Europe")
+    disp (' ')
+    disp ([ 'As you travel to ', place]);
+    disp ([ 'You relize once leaving at the airport, ', place, ' is not the same as it once was'])
+    disp ( 'Suddenly all of the workers at the airport urge everyone to leave the airport as soon as possiable. You are confused but you countinue foward. A dumb move I must say.')
+    disp (' ')
+    
+    disp ( 'Anyways back to the story... Where was I? Oh right.');
+    disp ([ 'You look for your best friend ', friend, ' who you last saw three years ago. Just before you left to go to war.'])
+    disp ( 'As you enter you see something distrubing...')
+    
+    throat = imread('stake.jpg');
+    figure;
+    imshow(throat);
+    
+    countinue = true;
+    
+    disp ( ' ')
+    disp ( '... Is that a dead body?');
+    disp ( 'You move foward looking for your friend when you encounter a message on your friends door which you never seen before')
+    disp ( 'Knowing your personaility I knew you would try to crack the code. Which is exactly what you did, and oh boy not what you expected.')
+    
+    disp ( 'Go ahead and show off, try to slove the puzzle below.. You have 3 tries. Good Luck')
+    disp ( ' ');
+    
+    word = 'thou';
+    wordNew = "thou";
+    newWord = word(randperm(length(word)));
+    
+    word1 = 'are';
+    wordNew1 = "are";
+    newWord1 = word1(randperm(length(word1)));
+    
+    word2 = 'bringer';
+    wordNew2 = "bringer";
+    newWord2 = word2(randperm(length(word2)));
+    
+    word3 = 'death';
+    wordNew3 = "death";
+    newWord3 = word3(randperm(length(word3)));
+      
+    disp ( 'If you can guess the word, without making more than 3 mistakes you will be able to unlock this door');
+    disp ( ' ');
+    
+    disp (newWord)
+    guess = input ( "Here are the words, enter them as they come up: ", "s"); disp (' ');
+    
+    disp (newWord1);
+    guess1 = input( "Now what about this one?: ", "s" ); disp (' ');
+    
+    disp (newWord2);
+    guess2 = input( "Think hard!: ", "s"); disp (' ');
+    
+    disp (newWord3);
+    guess3 = input( "You got this: ", "s"); disp (' ');
+    
+    guesses = (3);    
+    if (wordNew == guess && wordNew1 == guess1 && wordNew2 == guess2 && wordNew3 == guess3 )
+        disp ( 'Well, well, well, looks like you figured out what the door said. Took you long enough.');
+        disp ( 'Why do you look so confused? Its true, wherever you go there is a storm, now you jsut have to figure out how to fix it, and dont forget about that friend of yours!');
+        disp ( 'ONWARD!');
+    end
+    
+    while (guess ~= wordNew || guess1 ~= wordNew1 || guess2 ~= wordNew2 || guess3 ~= wordNew3)
+        if (guesses == 0)
+            break;
+        end
+        while (guess ~= wordNew)
+            guesses = guesses - 1;
+
+            if (guesses == 0)
+                countinue = false;
+                disp ( 'Sorry, try again in the next life?');
+            else
+                disp ('Keep on going! You still have # of guesses!: '); disp (guesses);
+                disp (['Sorry, the guess for: ', wrong, ' is incorrect.']);
+                guess = input( "Guess again! : ", "s" ); 
+            end
+            if (guess == wordNew)
+                break;
+            end
+        end
+
+         while (guess1 ~= wordNew1)
+            guesses = guesses - 1;
+
+            if (guesses == 0)
+                countinue = false;
+                disp ( 'Sorry, try again in the next life?');
+            else
+                disp ('Keep on going! You still have # of guesses!: '); disp (guesses);
+                disp (['Sorry, the guess for: ', wrong1, ' is incorrect.']);
+                guess1 = input( "Guess again! : ", "s" ); 
+            end
+            if (guess1 == wordNew1)
+                break;
+            end
+         end
+
+         while (guess2 ~= wordNew2)
+            guesses = guesses - 1;
+
+            if (guesses == 0)
+                countinue = false;
+                disp ( 'Sorry, try again in the next life?');
+            else
+                disp ('Keep on going! You still have # of guesses!: '); disp (guesses);
+                disp (['Sorry, the guess for: ', newWord2, ' is incorrect.']);
+                guess2 = input( "Guess again! : ", "s" ); 
+            end
+            if (guess2 == wordNew2)
+                break;
+            end
+         end
+
+         while (guess3 ~= wordNew3)
+            guesses = guesses - 1;
+
+            if (guesses == 0)
+                countinue = false;
+                disp ( 'Sorry, try again in the next life?');
+            else
+                disp ('Keep on going! You still have # of guesses!: '); disp (guesses);
+                disp (['Sorry, the guess for: ', newWord3, ' is incorrect.']);
+                guess3 = input( "Guess again! : ", "s" ); 
+            end
+            if (guess3 == wordNew3)
+                break;
+            end
+         end
+    end
+     
+ if (countinue == true)
+    disp ( ' ');
+    disp ( 'You have 3 choices, you could go back to the airport and go back to where you came from, and maybe cause a bit of hell over there too.');
+    disp ( 'Or you could go back there to find some answers....')
+    disp ( 'Be smart');
+    disp ( 'Theres also the chance of dropping everything to look for your friend, they might have answers... What? You never know.');
+    disp ( ' ');
+
+    disp ( 'a. Escape');
+    disp ( 'b. Find answers');
+    disp ( 'c. Find friend and possiable answers'); 
+
+    choice = input ( "Let me know what you decide (a, b, c): ", "s");
+    disp (' ');
+
+    if (choice == "a")
+
+        disp ( 'You did it!! But you left your friend behind, so sad. Lets try not to think about it');
+        disp ( 'Oh you just arrived and looks like your all alone. Sad.');
+        disp ( 'Is this what you wanted? Well too late now right?')
+    elseif (choice == "b")
+        disp ( 'Wao are you sure about this?');
+        disp ( 'Ok, well you wanted this... You are going back trying to aviod... what it looks like the nazis??')
+        disp ( 'Hide!!')
+
+    else
+        disp ( 'You start to back down, and you see the nazis apraching your way, you see a abonded truck and hide inside...');
+        disp ( 'Take a peek go ahead');
+        peek = input ( "Yes or no? ", "s");
+        if (peek == "yes")
+            disp ( 'Peek a boo the man bellows as he stares down you with his cold, cold, eyes.');
+            disp ( 'You slowly back away, but while you were making eye contact with the death stare, someone already came behind you and stabbed you in the back.');
+            disp ( ['Oh would you look at that... its your friend ', friend, ' what a shame.']);
+        else
+            disp ( 'Oh looks like you doged a bullet. Phew close one. *sigh*. Litterally.');
+            disp ( 'Maybe you should find another place to hide, until you do, I suggest you run for now.');
+        end
+    end
+ end
+    
+elseif (place == "America") %crazy world
+    I = imread('ZcguhM.jpg');
+    figure;
+    imshow(I);
+
+    disp ('Oh boy, looks like you just happened to come at the wrong time. Looks like its destoryed and the sun never rises');
+    disp ('I wonder what happened here... Im sure you will be fine');
+    disp ( ' ');
+    disp ( 'Oh hey, did you go crazy too? Yup, looks like it.');
+
+    crazy = imread('ZcguhM.jpg');
+    figure;
+    imshow(crazy);
+
+elseif (place == "Asia" || place == "asia") % cant escape tradition 
+    vivo = imread("R.jpg");  
+    figure;
+    imshow(vivo); 
+    
+    disp ( 'Waooooo this place is bueaty... Utopia in fact. We might just stay here forever.');
+    disp ( '*Well I was just told there is suspcuis deaths all around... oh well for next time for now.');
+    disp ( 'You know, till your next then we will worry about it.');
+
+else % you just die dude, world distaters all around
+    image = imread("Kalachakra_Protection_From_Natural_Disasters.jpg");
+    figure;
+    imshow(image);
+
+    disp( 'Looks like you just chose the wrong place, unless you want to live the rest of your life fighting animals, nature, and ghosts, your in luck for a real trip.');
+    disp ( 'Let''''s see where do you wanna begin, with the jungle, the ghost town, or my personal favorite the belly of the beast.')
+    des = input ("J for jungle; G for ghost town; B for beast of the belly: ", "s");
+    disp ( ' ');
+
+        countinue = false;
+    
+    if (des == "J" || des == "j")
+        disp ( 'When you first enter, you relize something. Oh wait, whats that. Oh no, run! Run!!');
+        
+        jungle = imread("Jungle.jpg");
+        figure;
+        imshow(jungle);
+        
+        disp ( 'Oh looks like they caught up and mauled you alive. Oh well, better than running and hiding all your life. I guess?.');
+        disp ( 'Well, that and the fire as well, and all the lightning, you would have just been in big trouble.');
+        
+        danger = imread("OIP.jpg");
+        figure;
+        imshow(danger);
+        
+    elseif (des == "G" || des == "g")
+        ghost = imread("ghostTown.jpg");
+        figure;
+        imshow(ghost);
+        
+    else
+        disp ( ' ');
+        disp ( 'Bold move, but, you litterally walked into the belly of the beast, so unless you can get out by finding the stomach... Well then you will just have to burn in acid.');
+        disp ( 'So will you choose to a) give up or b) countinue foward!');
+        choice = input ( "Which is it?? a or b?: ", "s");
+        
+        if (choice == "b" || choice == "B")
+            disp ( 'Onward you shall go!');
+            disp ( 'Right your location seems to be the teeth, try not to get curnched!.');
+            final = false;
+            while (final == false)
+                disp ( ' |_|_|_|_|_|_|_|_|_| ')
+                disp ( '  \_O_/');
+                disp ( '    |');
+                disp ( '   / \ ');
+                disp ( ' _/_ _\ _ _ _ _ _ _ _ ')
+                disp ( '| | | | | | | | | | | ')
+                disp ( 'Type which limb you would like to move, (a) right-arm, (b) left-arm, (c) right-leg, or (d) left-leg'); 
+                move = input ( "Which is it? a, b, c, or d?: ", "s");
+                if (move == "a" || move == "A")
+                    disp ( ' |_|_|_|_|_|_|_|_|_| ')
+                    disp ( '   O //');
+                    disp ( '    \');
+                    disp ( '   / \ ');
+                    disp ( ' _/_ /_ _ _ _ _ _ _ _ ')
+                    disp ( '| | | | | | | | | | | ')
+                    move1 = input ( "Whats nex? a, b, c, or d?: ", "s");
+                else
+                    disp ( 'Oh, looks like you got crushed by the pressure, good luck next time!');
+                    break;
+                end
+                if (move1 == "d" || move1 == "D")
+                    disp ( ' |_|_|_|_|_|_|_|_|_| ')
+                    disp ( '     O //');
+                    disp ( '      \');
+                    disp ( '      |\ ');
+                    disp ( ' _ _ /_/_ _ _ _ _ _ _ ')
+                    disp ( '| | | | | | | | | | | ')
+                    disp ( ' ');
+                    disp ( ' |_|_|_|_|_|_|_|_|_| ')
+                    disp ( '       \_O_/');
+                    disp ( '         |');
+                    disp ( '        | |');
+                    disp ( ' _ _  _/_ _\ _ _ _ _ _ ')
+                    disp ( '| | | | | | | | | | | ')
+                    move2 = input ( "Whats nex? a, b, c, or d?: ", "s");
+                else
+                    disp ( 'Oh, looks like you got crushed by the pressure, good luck next time!');
+                    break;
+                end
+                if (move2 == "b" || move2 == "B")
+                    disp ( ' |_|_|_|_|_|_|_|_|_| ')
+                    disp ( '         O_//');
+                    disp ( '         |');
+                    disp ( '        | |');
+                    disp ( ' _ _  _/_ _\ _ _ _ _ _ ')
+                    disp ( '| | | | | | | | | | | ')
+                    move3 = input ( "Whats nex? a, b, c, or d?: ", "s");
+                else
+                    disp ( 'Oh, looks like you got crushed by the pressure, good luck next time!');
+                    break;
+                end
+                if (move3 == "c" || move3 == "C")
+                    disp ( ' |_|_|_|_|_|_|_| ')
+                    disp ( '         O_//');
+                    disp ( '         |');
+                    disp ( '          \\ ');
+                    disp ( ' _ _ _ _ _|_\ _    ')
+                    disp ( '| | | | | | | | ')
+                    disp ( 'Now run!! Before you get drowned by the sliva. Oh no, too late looks like we going the throat, and do not try to hang onto the uvlea, you will regret it!')
+                    disp ( ' |_|_|_|_|_|_|_| ')
+                    disp ( '               _O_/');
+                    disp ( '              / /');
+                    disp ( '               /\ ');
+                    disp ( ' _ _ _ _ _ _ \/_ \   ')
+                    disp ( '| | | | | | | | ')
+                    countinue = true;
+                    break;
+                else
+                    disp ( 'Oh, looks like you got crushed by the pressure, good luck next time!');
+                    break;
+                end
+                
+            end
+        else
+            disp ( 'Oh ok... Its reasonable, uhh have a good slow painful death?');
+        end
+    end
+    if (countinue == true)
+        throat = imread("throat.jpg");
+        figure;
+        imshow(throat);
+             
+        disp ( 'Looks like you will have to find your own way, I know nothing about this body works');
+        disp ( "You made it to the stomach, and hey look its ", friend, " howd they get here.");
+        disp ( "After a couple of what felt ike days... you and ", friend, " surived long enough to be able to slide into the small intesent.");
+        disp ( 'That is hoping the colon does not absorb all the water inside of you.');
+        disp ( 'You make it through the rectum, covered in... stuff... and you survied, and found your friend. Congrats.');
+        
+    end
+    
+end
